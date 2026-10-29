@@ -36,3 +36,17 @@ footer{border-top:3px double var(--bone);padding:2rem 0;text-align:center;color:
 .slot{border:3px dashed var(--v);background:var(--plate);display:flex;align-items:center;justify-content:center;color:var(--ash);text-align:center;font-size:1rem;overflow:hidden}
 .slot:empty::before{content:attr(data-slot)}
 .slot img{width:100%;height:100%;object-fit:contain;display:block}
+.slot:has(img){border:0;background:none}
+.center{text-align:center}
+.menu{position:relative}
+.menu summary{list-style:none;cursor:pointer;border:2px solid var(--bone);background:var(--plate);padding:.4rem 1.1rem;font-size:1.2rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:" \25BE"}.menu[open] summary::after{content:" \25B4"}
+.menu summary:focus-visible{outline:3px solid var(--v);outline-offset:3px}
+.menu nav{position:absolute;right:0;top:calc(100% + .5rem);min-width:13rem;flex-direction:column;flex-wrap:nowrap;gap:0;background:var(--plate);border:3px double var(--bone);z-index:10}
+.menu nav a{padding:.7rem 1.1rem;border-bottom:1px solid var(--v);border-left:4px solid transparent}
+.menu nav a:last-child{border-bottom:0}
+.menu nav a:hover,.menu nav a[aria-current]{border-left-color:var(--red);background:var(--ink);border-bottom-color:var(--v)}
+.decks+.frame{margin-top:3.5rem}
+.hero-slot{width:min(64rem,100%);aspect-ratio:1983/793;margin:0 auto}
+.hero-slot img{mix-blend-mode:lighten}
