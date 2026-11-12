@@ -1,0 +1,52 @@
+:root{--ink:#0a0709;--plate:#14091c;--bone:#ece2cf;--ash:#a398b0;--v:#8a4fe0;--red:#c4121f}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ink);color:var(--bone);font:1.15rem/1.7 "IM Fell English",Georgia,serif}
+h1,h2,h3,.logo,.band,.sub{font-family:"UnifrakturCook","IM Fell English",serif;font-weight:700;line-height:1}
+a{color:var(--bone)}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--v);outline-offset:3px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem}
+header{border-bottom:3px double var(--bone);background:var(--ink);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem 1.5rem;padding-top:.5rem;padding-bottom:.5rem}
+.logo{font-size:2.2rem;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:.2rem 1.5rem;font-size:1.2rem}
+nav a{text-decoration:none;border-bottom:2px solid transparent}nav a:hover,nav a[aria-current]{border-bottom-color:var(--v)}
+.hero{text-align:center;padding:4rem 1rem 4.5rem;border-bottom:3px double var(--bone);background:repeating-conic-gradient(from 0deg at 50% 30%,#1a0b24 0 4deg,var(--ink) 4deg 8deg)}
+.crest-slot{width:min(14rem,48vw);aspect-ratio:1;margin:0 auto}
+.hero h1{font-size:clamp(5.5rem,27vw,16rem);line-height:.8;margin:.5rem 0 1rem}
+.hero.small h1{font-size:clamp(3.5rem,14vw,7rem);line-height:.95}
+.sub{font-size:clamp(1.5rem,4.5vw,2.6rem);color:var(--v)}
+.hero p{max-width:34rem;margin:1rem auto 1.6rem;color:var(--ash);font-size:1.3rem}
+.band{background:var(--red);color:var(--bone);border-block:3px solid var(--bone);padding:.7rem 1rem;text-align:center;font-size:clamp(1.2rem,3.5vw,1.9rem)}
+section{padding:4rem 0}
+h2{font-size:clamp(2.4rem,6vw,3.8rem);margin-bottom:1rem;text-align:center}
+.lead{max-width:38rem;margin:0 auto 2.5rem;text-align:center;color:var(--ash)}
+.btn{display:inline-block;padding:.7rem 1.6rem;margin:.25rem;border:2px solid var(--bone);background:var(--red);color:var(--bone);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border-radius:0}
+.btn:hover{background:var(--bone);color:var(--ink)}.btn.alt{background:var(--v)}.btn.alt:hover{background:var(--bone);color:var(--ink)}
+.decks{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2.5rem}
+.deck{text-align:center}.deck .slot{height:23rem;aspect-ratio:9/24;max-width:100%;margin:0 auto}
+.deck h3{font-size:2rem;margin-top:1rem}.deck p{color:var(--ash)}
+.frame{position:relative;border:3px double var(--bone);padding:2.5rem 1.5rem;background:var(--plate);max-width:42rem;margin:0 auto;text-align:center}
+.frame::before{content:"\2720";position:absolute;top:-1rem;left:50%;transform:translateX(-50%);background:var(--ink);padding:0 .7rem;color:var(--red);font-size:1.5rem;line-height:1}
+.frame p{margin-bottom:1rem}.meta{color:var(--v);font-style:italic}
+.list{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.list .frame{padding:2rem 1.2rem}.list h3{font-size:1.9rem;margin-bottom:.4rem}
+form{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.2rem}
+input{flex:1 1 14rem;padding:.7rem;border:2px solid var(--bone);background:var(--ink);color:var(--bone);font:inherit;border-radius:0}
+#msg{margin-top:1rem;min-height:1.7rem}
+footer{border-top:3px double var(--bone);padding:2rem 0;text-align:center;color:var(--ash)}
+.slot{border:3px dashed var(--v);background:var(--plate);display:flex;align-items:center;justify-content:center;color:var(--ash);text-align:center;font-size:1rem;overflow:hidden}
+.slot:empty::before{content:attr(data-slot)}
+.slot img{width:100%;height:100%;object-fit:contain;display:block}
+.slot:has(img){border:0;background:none}
+.center{text-align:center}
+.menu{position:relative}
+.menu summary{list-style:none;cursor:pointer;border:2px solid var(--bone);background:var(--plate);padding:.4rem 1.1rem;font-size:1.2rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:" \25BE"}.menu[open] summary::after{content:" \25B4"}
+.menu summary:focus-visible{outline:3px solid var(--v);outline-offset:3px}
+.menu nav{position:absolute;right:0;top:calc(100% + .5rem);min-width:13rem;flex-direction:column;flex-wrap:nowrap;gap:0;background:var(--plate);border:3px double var(--bone);z-index:10}
+.menu nav a{padding:.7rem 1.1rem;border-bottom:1px solid var(--v);border-left:4px solid transparent}
+.menu nav a:last-child{border-bottom:0}
+.menu nav a:hover,.menu nav a[aria-current]{border-left-color:var(--red);background:var(--ink);border-bottom-color:var(--v)}
+.decks+.frame{margin-top:3.5rem}
+.hero-slot{width:min(64rem,100%);aspect-ratio:1983/793;margin:0 auto}
+.hero-slot img{mix-blend-mode:lighten}
