@@ -19,11 +19,15 @@ document.getElementById("f").addEventListener("submit", async function (e) {
       headers: { "Accept": "application/json" },
       body: new FormData(this)
     });
-    if (!res.ok) throw new Error("Request failed");
+    const data = await res.json().catch(function () { return {}; });
+    console.log("FormSubmit response:", res.status, data);
+    if (!res.ok || data.success === false || data.success === "false") {
+      throw new Error(data.message || "Request failed");
+    }
     msg.textContent = "You are on the list: " + document.getElementById("e").value;
     this.reset();
   } catch (err) {
-    msg.textContent = "Something went wrong. Try again in a moment.";
+    msg.textContent = "Something went wrong: " + err.message;
   } finally {
     btn.disabled = false;
   }
